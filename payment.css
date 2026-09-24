@@ -1,0 +1,511 @@
+/* =========================================================
+   LUVORA — PAYMENT PAGE
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  color: #fff;
+
+  background:
+    radial-gradient(
+      circle at 20% 15%,
+      rgba(255, 137, 190, 0.16),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 80% 85%,
+      rgba(166, 116, 194, 0.16),
+      transparent 32%
+    ),
+    linear-gradient(
+      135deg,
+      #170d1c,
+      #241020 48%,
+      #120b17
+    );
+
+  overflow-x: hidden;
+}
+
+
+/* ---------------------------------------------------------
+   PAGE
+   --------------------------------------------------------- */
+
+.payment-page {
+
+  min-height: 100vh;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 60px 20px;
+}
+
+
+/* ---------------------------------------------------------
+   CARD
+   --------------------------------------------------------- */
+
+.payment-card {
+
+  position: relative;
+
+  width: min(560px, 100%);
+
+  padding: 48px 42px;
+
+  text-align: center;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.12);
+
+  border-radius: 32px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.085),
+      rgba(255, 255, 255, 0.035)
+    );
+
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+
+  box-shadow:
+    0 35px 90px rgba(0, 0, 0, 0.42),
+    inset 0 1px 0
+      rgba(255, 255, 255, 0.1);
+
+  overflow: hidden;
+}
+
+
+/* Soft card glow */
+
+.payment-card::before {
+
+  content: "";
+
+  position: absolute;
+
+  width: 230px;
+  height: 230px;
+
+  top: -130px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  border-radius: 50%;
+
+  background:
+    rgba(255, 154, 202, 0.2);
+
+  filter: blur(60px);
+
+  pointer-events: none;
+}
+
+
+/* ---------------------------------------------------------
+   ICON
+   --------------------------------------------------------- */
+
+.payment-icon {
+
+  position: relative;
+
+  width: 68px;
+  height: 68px;
+
+  margin: 0 auto 22px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  font-size: 28px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 190, 220, 0.2),
+      rgba(255, 255, 255, 0.06)
+    );
+
+  border:
+    1px solid
+    rgba(255, 220, 238, 0.18);
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0
+      rgba(255, 255, 255, 0.2);
+}
+
+
+/* ---------------------------------------------------------
+   TEXT
+   --------------------------------------------------------- */
+
+.payment-eyebrow {
+
+  margin: 0 0 14px;
+
+  font-size: 0.72rem;
+
+  letter-spacing: 0.22em;
+
+  text-transform: uppercase;
+
+  color:
+    rgba(255, 201, 225, 0.72);
+
+  font-weight: 700;
+}
+
+
+.payment-card h1 {
+
+  position: relative;
+
+  margin: 0;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(2rem, 5vw, 3rem);
+
+  line-height: 1.08;
+
+  font-weight: 500;
+
+  letter-spacing: -0.025em;
+}
+
+
+.payment-description {
+
+  max-width: 450px;
+
+  margin: 20px auto 0;
+
+  font-size: 0.94rem;
+
+  line-height: 1.75;
+
+  color:
+    rgba(255, 235, 245, 0.65);
+}
+
+
+/* ---------------------------------------------------------
+   SUMMARY
+   --------------------------------------------------------- */
+
+.payment-summary {
+
+  margin-top: 32px;
+
+  padding: 6px 20px;
+
+  border-radius: 20px;
+
+  background:
+    rgba(255, 255, 255, 0.045);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+}
+
+
+.summary-row {
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 15px 0;
+
+  border-bottom:
+    1px solid
+    rgba(255, 255, 255, 0.07);
+
+  font-size: 0.86rem;
+}
+
+
+.summary-row:last-child {
+  border-bottom: none;
+}
+
+
+.summary-row span {
+
+  color:
+    rgba(255, 235, 245, 0.55);
+
+  text-align: left;
+}
+
+
+.summary-row strong {
+
+  color:
+    rgba(255, 245, 249, 0.9);
+
+  font-weight: 600;
+
+  text-align: right;
+}
+
+
+/* ---------------------------------------------------------
+   PRICE
+   --------------------------------------------------------- */
+
+.price-box {
+
+  margin-top: 24px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 20px 22px;
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 156, 202, 0.11),
+      rgba(174, 119, 194, 0.08)
+    );
+
+  border:
+    1px solid
+    rgba(255, 190, 220, 0.12);
+}
+
+
+.price-label {
+
+  color:
+    rgba(255, 235, 245, 0.62);
+
+  font-size: 0.88rem;
+}
+
+
+.price {
+
+  font-size: 1.8rem;
+
+  font-weight: 700;
+
+  letter-spacing: -0.03em;
+}
+
+
+/* ---------------------------------------------------------
+   PAYMENT BUTTON
+   --------------------------------------------------------- */
+
+.payment-button {
+
+  position: relative;
+
+  width: 100%;
+
+  margin-top: 24px;
+
+  padding: 17px 24px;
+
+  border: none;
+
+  border-radius: 999px;
+
+  cursor: pointer;
+
+  color: #fff;
+
+  font: inherit;
+
+  font-size: 0.95rem;
+
+  font-weight: 700;
+
+  background:
+    linear-gradient(
+      135deg,
+      #d96b9b,
+      #9d659f
+    );
+
+  box-shadow:
+    0 16px 35px
+      rgba(190, 87, 143, 0.28),
+    inset 0 1px 0
+      rgba(255, 255, 255, 0.28);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+.payment-button span {
+
+  display: inline-block;
+
+  margin-left: 8px;
+
+  transition:
+    transform 0.25s ease;
+}
+
+
+.payment-button:hover {
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 21px 42px
+      rgba(190, 87, 143, 0.36),
+    inset 0 1px 0
+      rgba(255, 255, 255, 0.32);
+}
+
+
+.payment-button:hover span {
+  transform: translateX(5px);
+}
+
+
+.payment-button:active {
+  transform: translateY(-1px);
+}
+
+
+/* ---------------------------------------------------------
+   SECURITY NOTE
+   --------------------------------------------------------- */
+
+.secure-note {
+
+  margin: 16px 0 0;
+
+  font-size: 0.74rem;
+
+  color:
+    rgba(255, 235, 245, 0.42);
+}
+
+
+/* ---------------------------------------------------------
+   BACK BUTTON
+   --------------------------------------------------------- */
+
+.back-button {
+
+  margin-top: 22px;
+
+  border: none;
+
+  background: none;
+
+  color:
+    rgba(255, 235, 245, 0.52);
+
+  font: inherit;
+
+  font-size: 0.82rem;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease;
+}
+
+
+.back-button:hover {
+
+  color:
+    rgba(255, 235, 245, 0.9);
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width: 600px) {
+
+  .payment-page {
+    padding: 28px 14px;
+  }
+
+  .payment-card {
+
+    padding: 38px 22px;
+
+    border-radius: 26px;
+  }
+
+  .payment-card h1 {
+    font-size: 2rem;
+  }
+
+  .payment-description {
+    font-size: 0.88rem;
+  }
+
+  .payment-summary {
+    padding: 5px 15px;
+  }
+
+  .summary-row {
+    font-size: 0.8rem;
+  }
+
+  .price-box {
+    padding: 17px;
+  }
+
+  .price {
+    font-size: 1.55rem;
+  }
+
+}
